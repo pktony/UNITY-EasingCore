@@ -16,7 +16,7 @@ public class Test : MonoBehaviour
     public float finalTime = 1;
 
     [Header("Test")]
-    public AnimationCurve curve;
+    public WrapMode wrapMode;
 
     private void Update()
     {
@@ -27,8 +27,8 @@ public class Test : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
-            anim.Play();
             var clip = anim.GetClip("");
+            anim.Play(clip.name);
             EditorCurveBinding[] curveBindings = AnimationUtility.GetCurveBindings(clip);
             foreach(var binding in curveBindings)
             {
@@ -45,10 +45,12 @@ public class Test : MonoBehaviour
         }
     }
 
+
     private void PlayAnimation()
     {
         AnimationClip clip = new() { legacy = true };
-        curve = clip.SetCurve(AnimationPropertyType.AnchoredPositionY, easeType,
+        clip.wrapMode = wrapMode ;
+        clip.SetCurve(AnimationPropertyType.AnchoredPositionY, easeType,
             initialPosition, finalPosition, 0f, finalTime);
         
         PlayAnimationClip(clip);
