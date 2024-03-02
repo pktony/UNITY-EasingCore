@@ -4,6 +4,8 @@ using UnityEditor;
 
 using AnimationClipUtility;
 using AnimationClipUtility.Type;
+using System;
+using System.Globalization;
 
 public class Test : MonoBehaviour
 {
@@ -17,6 +19,13 @@ public class Test : MonoBehaviour
 
     [Header("Test")]
     public WrapMode wrapMode;
+
+    private void Awake() {
+        DateTime test = new (2024, 2, 29, 0, 12, 12, 0);
+        Debug.Log(test);
+
+        Debug.Log($"{DateTime.Now.Year}-{DateTime.Now.Month}-{DateTime.Now.Day}");
+    }
 
     private void Update()
     {

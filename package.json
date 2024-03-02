@@ -1,0 +1,26 @@
+{
+  "name": "com.isdororok.easingcore",
+  "displayName": "Animation Clip Utiliy",
+  "description": "Animation Clip Utility for Unity. Uses animation clip",
+  "version": "0.1.0",
+  "unity": "2021.3",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pktony/UNITY-EasingCore.git"
+  },
+  "author": {
+    "name": "isdororok",
+    "email": "pktony2011@gmail.com",
+    "url": "https://github.com/pktony"
+  },
+  "dependencies": {},
+  "documentationUrl": "https://github.com/pktony/UNITY-EasingCore.git",
+  "keywords": [
+    "animation",
+    "animation curve",
+    "animation clip",
+    "easing core",
+    "unity"
+  ]
+}
