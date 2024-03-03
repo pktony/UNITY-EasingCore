@@ -14,6 +14,8 @@ This repository implements animation utility for Unity 3D. It uses legacy animat
 
 I'm not an expert at animation, so I made an easy way to animate, especially in UIs. I understand that the function has multiple parameters, and not easy to understand at a glance, nevertheless, I tried my best to generalize and simplify the function. Feel free to modify this code! Use your imagination to develop this codes !
 
+These are not tested. Use with caution.
+
 Also take a look at my blog for more detailed explanation. (KOREAN) [Tistory Blog](coming soon)
 
 **NOTICE** <br>
@@ -63,18 +65,22 @@ private void PlayAnimationClip(AnimationClip clip)
  When you want to animate the component in the child component, use hierarchy parmeter.<br>
  hierarchy should be the name of the child Transform, and should be joined with '/' <br>
  Example:<br>
-      - Parent (Animation Component) <br>
-        |-- child_1 (Transform) <br>
-        |-- child_2 (Image) <br>
-                |-- grandchild () <br>
-        
-when you want to animate child_1 the hierarchy parameter should look like "Parent/child_1"
+ ```
+Parent (Animation Component)
+   |-- child_1 (Transform)
+   |-- child_2 (Image)
+      |-- grandchild
+```    
+- when you want to animate alpha of Image in child_1 the hierarchy parameter should look like "Parent/child_1", and [Animation Property](#animationpropertytype) should be AnimationProperty.Alpha
+- When you want to animate AnchoredPosition of grandchild, the hierarchy parameter should look like "Parent/child_2/grandchild", and [Animation Property](#animationpropertytype) should be AnimationProperty.AnchoredPosition
 
 ## Example <a name = "example"></a>
 
 Refer to Example Scene in the package.
 
 Animation Samples
+
+Image![alt text](AnimationExample.gif)
 
 
 ## Code Overview <a name= "code_overview"></a>
@@ -144,7 +150,7 @@ Sprite
 Alpha
 ```
 
-You can actually add more properties yourself as long as you know the Unity's internal name for each properties.
+You can actually add any properties(alpha, position, pivot, anchor, etc) yourself as long as you know the Unity's internal name for each properties.
 
 ---
 
